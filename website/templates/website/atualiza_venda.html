@@ -1,0 +1,53 @@
+{% extends "website/_layouts/base.html" %}
+
+{% load widget_tweaks %}
+
+{% block title %}Atualização de Vendas{% endblock %}
+
+{% block conteudo %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Atualizar Vendas</h5>
+          <form method="post">
+            <!-- Não se esqueça dessa tag -->
+            {% csrf_token %}
+
+            <!-- Servico -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Serviço</span>
+              </div>
+              {% render_field form.id_servico class+="form-control" %}
+            </div>
+
+            <!-- Empresa -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Empresa</span>
+              </div>
+              {% render_field form.id_empresa class+="form-control" %}
+            </div>
+
+            <!-- Vendedor -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Vendedor</span>
+              </div>
+              {% render_field form.id_vendedor class+="form-control" %}
+            </div>
+
+            <hr />
+            <div class="text-right">
+              <a href="{% url 'website:lista_vendas' %}" class="btn btn-outline-primary">Voltar</a>
+              <button class="btn btn-primary">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

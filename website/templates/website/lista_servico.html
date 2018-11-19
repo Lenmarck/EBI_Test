@@ -1,0 +1,69 @@
+{% extends "website/_layouts/base.html" %}
+
+{% block title %}Lista de Serviços{% endblock %}
+
+{% load primeira_letra %}
+
+{% block conteudo %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lista de Serviços</h5>
+
+          {% if servicos|length > 0 %}
+            <p class="card-text">
+              Aqui está a lista de <code>Serviços</code> cadastrados.
+            </p>
+
+            <table class="table">
+              <thead class="thead-dark">
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Nome</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Comissão (%)</th>
+                <th scope="col">Prestadora</th>
+                <th scope="col" class="text-center">Ações</th>
+              </tr>
+              </thead>
+              <tbody>
+              {% for servico in servicos %}
+                <tr>
+                  <th scope="row">{{ servico.nome_servico|primeira_letra }}</th>
+                  <td>{{ servico.nome_servico }}</td>
+                  <td>{{ servico.preco }}</td>
+                  <td>{{ servico.comissao_servico }}</td>
+                  <td>{{ servico.empresa_prestadora }}</td>
+                  <td class="text-center">
+                    <a href="{% url 'website:atualiza_servico' pk=servico.id %}"
+                       class="btn btn-primary">
+                      Atualizar
+                    </a>
+                    <a href="{% url 'website:deleta_servico' pk=servico.id %}"
+                      class="btn btn-danger">
+                        Excluir
+                    </a>
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+        {% else %}
+          <div class="text-center mt-5 mb-5 jumbotron">
+            <h5>Nenhum <code>Serviço</code> cadastrado ainda.</h5>
+          </div>
+        {% endif %}
+          <hr />
+          <div class="text-right">
+            <a href="{% url 'website:cadastra_servico' %}" class="btn btn-primary">
+              Cadastrar Serviço
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

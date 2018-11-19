@@ -1,0 +1,144 @@
+<!-- Estendemos do template base -->
+{% extends "website/_layouts/base.html" %}
+
+<!-- Bloco que define o <title></title> da nossa página -->
+{% block title %}Página Inicial{% endblock %}
+
+<!-- Bloco de conteúdo da página -->
+{% block conteudo %}
+<!-- Empresa -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Cadastrar Empresa</h5>
+          <p class="card-text">
+            Cadastre aqui uma nova <code>Empresa</code>.
+          </p>
+          <a href="{% url 'website:cadastra_empresa' %}"
+             class="btn btn-primary">
+            Nova Empresa
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lista de Empresas</h5>
+          <p class="card-text">
+            Veja aqui a lista de <code>Empresas</code> cadastradas.
+          </p>
+          <a href="{% url 'website:lista_empresas' %}"
+             class="btn btn-primary">
+            Ver Lista
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Serviço -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Cadastrar Serviço</h5>
+          <p class="card-text">
+            Cadastre aqui um novo <code>Serviço</code>.
+          </p>
+          <a href="{% url 'website:cadastra_servico' %}"
+             class="btn btn-primary">
+            Novo Serviço
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lista de Serviços</h5>
+          <p class="card-text">
+            Veja aqui a lista de <code>Serviços</code> cadastrados.
+          </p>
+          <a href="{% url 'website:lista_servicos' %}"
+             class="btn btn-primary">
+            Ver Lista
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Vendedor -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Cadastrar Vendedor</h5>
+          <p class="card-text">
+            Cadastre aqui um novo <code>Vendedor</code>.
+          </p>
+          <a href="{% url 'website:cadastra_vendedor' %}"
+             class="btn btn-primary">
+            Novo Serviço
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lista de Vendedores</h5>
+          <p class="card-text">
+            Veja aqui a lista de <code>Vendedores</code> cadastrados.
+          </p>
+          <a href="{% url 'website:lista_vendedores' %}"
+             class="btn btn-primary">
+            Ver Lista
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Venda -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Registrar Venda</h5>
+          <p class="card-text">
+            Registre aqui uma nova <code>Venda</code>.
+          </p>
+          <a href="{% url 'website:cadastra_venda' %}"
+             class="btn btn-primary">
+            Nova Venda
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lista de Vendas</h5>
+          <p class="card-text">
+            Veja aqui a lista de <code>Vendas</code> realizadas.
+          </p>
+          <a href="{% url 'website:lista_vendas' %}"
+             class="btn btn-primary">
+            Ver Lista
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "website/_layouts/base.html" %}
+
+{% load widget_tweaks %}
+
+{% block title %}Cadastro de Servicos{% endblock %}
+
+{% block conteudo %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Cadastro de Serviço</h5>
+          <p class="card-text">
+            Complete o formulário abaixo para cadastrar
+            um novo <code>Serviço</code>.
+          </p>
+          <form method="post">
+            <!-- Não se esqueça dessa tag -->
+            {% csrf_token %}
+
+            <!-- Nome do Servico -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nome</span>
+              </div>
+              {% render_field form.nome_servico class+="form-control" %}
+            </div>
+
+            <!-- Preço do Serviço -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Preço</span>
+              </div>
+              {% render_field form.preco class+="form-control" %}
+            </div>
+
+            <!-- Comissão do Serviço -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Comissão</span>
+              </div>
+              {% render_field form.comissao_servico class+="form-control" %}
+            </div>
+
+            <!-- Empresa Prestadora -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Prestadora</span>
+              </div>
+              {% render_field form.empresa_prestadora class+="form-control" %}
+            </div>
+
+            <hr>
+            <div class="text-right">
+              <a href="{% url 'website:lista_empresas' %}" class="btn btn-outline-primary">Voltar</a>
+              <button class="btn btn-primary">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
