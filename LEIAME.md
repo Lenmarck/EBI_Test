@@ -19,4 +19,7 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
-
+#App
+```bash
+http://localhost:8000/
+```
